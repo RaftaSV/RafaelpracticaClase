@@ -29,11 +29,12 @@ namespace sistemas_Ventas.Vista
         {
             using (sistema_ventasEntities2 db = new sistema_ventasEntities2())
             {
+                var lista = from u in db.Usuarios
+                            select new { u.Id,u.Email,u.Contrasena};
 
-                dtvUsuarios.DataSource = db.Usuarios.ToList();
-                //var usuarios = db.Usuarios;
-                //foreach (var iterar in db.Usuarios) {
-                //    dtvUsuarios.Rows.Add(iterar.Email, iterar.Email);
+                dtvUsuarios.DataSource = lista.ToList();
+
+           
             }
         }
 
