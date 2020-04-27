@@ -13,10 +13,10 @@ namespace sistemas_Ventas.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class sistema_ventasEntities2 : DbContext
+    public partial class sistema_ventasEntities4 : DbContext
     {
-        public sistema_ventasEntities2()
-            : base("name=sistema_ventasEntities2")
+        public sistema_ventasEntities4()
+            : base("name=sistema_ventasEntities4")
         {
         }
     
@@ -25,7 +25,12 @@ namespace sistemas_Ventas.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<producto> producto { get; set; }
         public virtual DbSet<rol_Usuarios> rol_Usuarios { get; set; }
+        public virtual DbSet<tb_cliente> tb_cliente { get; set; }
+        public virtual DbSet<tb_documento> tb_documento { get; set; }
+        public virtual DbSet<tb_venta> tb_venta { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<detalleVenta> detalleVenta { get; set; }
     }
 }

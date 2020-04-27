@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemas_Ventas.Vista;
+using sistemas_Ventas.Vista.formularios_busqueda;
+using sistemas_Ventas.Vista;
+
 namespace sistemas_Ventas
 {
     static class Program

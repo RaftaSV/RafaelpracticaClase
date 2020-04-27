@@ -12,21 +12,19 @@ namespace sistemas_Ventas.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuarios
+    public partial class tb_cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuarios()
+        public tb_cliente()
         {
-            this.rol_Usuarios = new HashSet<rol_Usuarios>();
             this.tb_venta = new HashSet<tb_venta>();
         }
     
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public string Contrasena { get; set; }
+        public int iDCliente { get; set; }
+        public string nombreCliente { get; set; }
+        public string direccionCliente { get; set; }
+        public string duiCliente { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<rol_Usuarios> rol_Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_venta> tb_venta { get; set; }
     }

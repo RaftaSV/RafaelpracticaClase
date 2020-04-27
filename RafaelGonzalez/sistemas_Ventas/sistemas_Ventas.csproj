@@ -61,29 +61,74 @@
     <Compile Include="frmLoggeo.Designer.cs">
       <DependentUpon>frmLoggeo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\detalleVenta.cs">
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\producto.cs">
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\rol_Usuarios.cs">
-      <DependentUpon>sistemas_Ventas.tt</DependentUpon>
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sistemas_Ventas.Context.cs">
+    <Compile Include="Model\sistema_ventas.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sistemas_Ventas.Context.tt</DependentUpon>
+      <DependentUpon>sistema_ventas.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sistemas_Ventas.cs">
+    <Compile Include="Model\sistema_ventas.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sistemas_Ventas.tt</DependentUpon>
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sistemas_Ventas.Designer.cs">
+    <Compile Include="Model\sistema_ventas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sistemas_Ventas.edmx</DependentUpon>
+      <DependentUpon>sistema_ventas.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tb_cliente.cs">
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tb_documento.cs">
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tb_venta.cs">
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Usuarios.cs">
-      <DependentUpon>sistemas_Ventas.tt</DependentUpon>
+      <DependentUpon>sistema_ventas.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\formularios_busqueda\frmDetallesVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\formularios_busqueda\frmDetallesVenta.Designer.cs">
+      <DependentUpon>frmDetallesVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\formularios_busqueda\frmProductosB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\formularios_busqueda\frmProductosB.Designer.cs">
+      <DependentUpon>frmProductosB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmDocumentos.Designer.cs">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +147,18 @@
     <Compile Include="Vista\frmRoles.Designer.cs">
       <DependentUpon>frmRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmVentaDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmVentaDetalle.Designer.cs">
+      <DependentUpon>frmVentaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLoggeo.resx">
       <DependentUpon>frmLoggeo.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +171,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\formularios_busqueda\frmDetallesVenta.resx">
+      <DependentUpon>frmDetallesVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\formularios_busqueda\frmProductosB.resx">
+      <DependentUpon>frmProductosB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmDocumentos.resx">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmRoles.resx">
       <DependentUpon>frmRoles.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,12 +195,18 @@
     <EmbeddedResource Include="Vista\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\sistemas_Ventas.edmx">
+    <EmbeddedResource Include="Vista\frmVentaDetalle.resx">
+      <DependentUpon>frmVentaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\sistema_ventas.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>sistemas_Ventas.Designer.cs</LastGenOutput>
+      <LastGenOutput>sistema_ventas.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\sistemas_Ventas.edmx.diagram">
-      <DependentUpon>sistemas_Ventas.edmx</DependentUpon>
+    <None Include="Model\sistema_ventas.edmx.diagram">
+      <DependentUpon>sistema_ventas.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -148,15 +226,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\sistemas_Ventas.Context.tt">
+    <Content Include="Model\sistema_ventas.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sistemas_Ventas.edmx</DependentUpon>
-      <LastGenOutput>sistemas_Ventas.Context.cs</LastGenOutput>
+      <DependentUpon>sistema_ventas.edmx</DependentUpon>
+      <LastGenOutput>sistema_ventas.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\sistemas_Ventas.tt">
+    <Content Include="Model\sistema_ventas.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sistemas_Ventas.edmx</DependentUpon>
-      <LastGenOutput>sistemas_Ventas.cs</LastGenOutput>
+      <DependentUpon>sistema_ventas.edmx</DependentUpon>
+      <LastGenOutput>sistema_ventas.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
