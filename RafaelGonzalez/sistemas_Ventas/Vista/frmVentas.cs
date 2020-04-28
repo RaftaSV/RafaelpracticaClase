@@ -164,7 +164,7 @@ namespace sistemas_Ventas.Vista
         tb_venta venta = new tb_venta();
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(lblNumeroR.Text);
+          
             guardarventa();
             guardardetalle();
 
