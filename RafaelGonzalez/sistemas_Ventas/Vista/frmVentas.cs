@@ -164,16 +164,18 @@ namespace sistemas_Ventas.Vista
         tb_venta venta = new tb_venta();
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-          
-            guardarventa();
-            guardardetalle();
+            if (dgvVenta.RowCount > 0)
+            {
+                guardarventa();
+                guardardetalle();
 
 
-            limpiar();
-            cargarcombo();
-            cargarNUmeroVenta();
-            txtTotalVenta.Text = "0";
-            txtEfectivo.Text = "";
+                limpiar();
+                cargarcombo();
+                cargarNUmeroVenta();
+                txtTotalVenta.Text = "0";
+                txtEfectivo.Text = "";
+            }
         }
         void guardarventa() {
             using (sistema_ventasEntities4 db = new sistema_ventasEntities4())
@@ -185,6 +187,7 @@ namespace sistemas_Ventas.Vista
                 venta.fecha = DateTime.Today;
                 db.tb_venta.Add(venta);
                 db.SaveChanges();
+                dgvVenta.Rows.Clear();
             }
         }
         void guardardetalle()
@@ -203,6 +206,7 @@ namespace sistemas_Ventas.Vista
                     detalle.total = decimal.Parse(dgv.Cells[4].Value.ToString());
                     db.detalleVenta.Add(detalle);
                     db.SaveChanges();
+
                     
                 }
 
