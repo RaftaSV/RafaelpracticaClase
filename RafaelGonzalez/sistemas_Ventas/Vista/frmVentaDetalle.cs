@@ -46,14 +46,9 @@ namespace sistemas_Ventas.Vista
         private void frmVentaDetalle_Load(object sender, EventArgs e)
         {
             cargar();
-            txtmensaje.Text = "Si ha realizado ventas actualmente por favor pulsar Recargar." + "\r\n"+"" +
-                "Desea ver los productos de la venta selecione y de enter";
+          
         }
 
-        private void btnRecargar_Click(object sender, EventArgs e)
-        {
-            cargar();
-        }
 
        public static frmDetallesVenta d = new frmDetallesVenta();
         void abrirdetalles()

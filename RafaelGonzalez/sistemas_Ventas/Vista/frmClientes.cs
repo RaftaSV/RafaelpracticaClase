@@ -25,7 +25,7 @@ namespace sistemas_Ventas.Vista
             DesactivarbotonesEditarEliminar();
             btnGuardar.Enabled = false;
         }
-        void cargarDatos()
+        public void cargarDatos()
         {
             using ( sistema_ventasEntities4 db = new sistema_ventasEntities4())
             {

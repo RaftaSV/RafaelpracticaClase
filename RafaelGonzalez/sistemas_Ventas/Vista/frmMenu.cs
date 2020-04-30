@@ -23,6 +23,8 @@ namespace sistemas_Ventas.Vista
         public static frmRoles rol = new frmRoles();
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            rol.CargarCombo();
+            rol.CargarDatos();
             rol.MdiParent= this;
             rol.FormBorderStyle = FormBorderStyle.None;
             rol.Dock = DockStyle.Fill;
@@ -46,6 +48,7 @@ namespace sistemas_Ventas.Vista
         public static frmClientes clientes = new frmClientes();
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            clientes.cargarDatos();
             clientes.MdiParent = this;
             clientes.FormBorderStyle = FormBorderStyle.None;
             clientes.Dock = DockStyle.Fill;
@@ -56,6 +59,7 @@ namespace sistemas_Ventas.Vista
         public static frmDocumentos doc = new frmDocumentos();
         private void documentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            doc.cargarDatos();
             doc.MdiParent = this;
             doc.FormBorderStyle = FormBorderStyle.None;
             doc.Dock = DockStyle.Fill;
@@ -65,6 +69,7 @@ namespace sistemas_Ventas.Vista
         public static frmProductos producto = new frmProductos();
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            producto.cargarDatos();
             producto.MdiParent = this;
             producto.FormBorderStyle = FormBorderStyle.None;
             producto.Dock = DockStyle.Fill;
@@ -92,6 +97,8 @@ namespace sistemas_Ventas.Vista
         public frmVentas ventas = new frmVentas();
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            venta.cargarcombo();
+            venta.cargarBuscarpro();
             venta.MdiParent= this;
             venta.FormBorderStyle = FormBorderStyle.None;
             venta.Dock = DockStyle.Fill;
@@ -103,7 +110,7 @@ namespace sistemas_Ventas.Vista
         
         private void ventaDetallesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            venta.Hide();
+            ventaDetalle.cargar();
             ventaDetalle.MdiParent = this;
             ventaDetalle.FormBorderStyle = FormBorderStyle.None;
             ventaDetalle.Dock = DockStyle.Fill;
@@ -114,11 +121,9 @@ namespace sistemas_Ventas.Vista
 
         private void frmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult R = MessageBox.Show("¿Desea cerrar la aplicacion?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2);
-            if (R== DialogResult.Yes){
+            
                 Application.Exit();
-
-            }
+         
         }
     }
 }

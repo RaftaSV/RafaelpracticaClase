@@ -51,11 +51,14 @@ namespace sistemas_Ventas.Vista
         {using (sistema_ventasEntities4 db = new sistema_ventasEntities4())
             {
                 var venta = db.tb_venta.ToList();
-                foreach (var iterar in venta)
+                if (venta.Count > 0)
                 {
-                    lblNumeroR.Text = iterar.idVenta.ToString();
-                    IDVenta = iterar.idVenta;
+                    foreach (var iterar in venta)
+                    {
+                        lblNumeroR.Text = iterar.idVenta.ToString();
+                        IDVenta = iterar.idVenta;
 
+                    }
                 }
             }
             
@@ -106,6 +109,10 @@ namespace sistemas_Ventas.Vista
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            cargarBuscarpro();
+        }
+        public void cargarBuscarpro()
+        {
             try
             {
                 string ID = txtBuscar.Text;
@@ -129,9 +136,10 @@ namespace sistemas_Ventas.Vista
                         txtPrecio.Text = iterar.PRECIO.ToString();
 
                     }
-                    
+
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 limpiar();
             }
@@ -148,6 +156,7 @@ namespace sistemas_Ventas.Vista
                 totalV = double.Parse(txtTotalVenta.Text) + total;
                 txtTotalVenta.Text = totalV.ToString();
                 limpiar();
+                btnBuscar.Focus();
             }
         }
         void limpiar()
@@ -164,7 +173,9 @@ namespace sistemas_Ventas.Vista
         tb_venta venta = new tb_venta();
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            if (dgvVenta.RowCount > 0)
+            double efectivo = double.Parse(txtEfectivo.Text);
+            double total = double.Parse(txtTotalVenta.Text);
+            if (dgvVenta.RowCount > 0 && efectivo>=total )
             {
                 guardarventa();
                 guardardetalle();
@@ -175,6 +186,7 @@ namespace sistemas_Ventas.Vista
                 cargarNUmeroVenta();
                 txtTotalVenta.Text = "0";
                 txtEfectivo.Text = "";
+                dgvVenta.Rows.Clear();
             }
         }
         void guardarventa() {
@@ -184,10 +196,10 @@ namespace sistemas_Ventas.Vista
                 venta.iDCliente = int.Parse(IdCliente);
                 venta.iDUsuario = int.Parse(txtUsuario.Text);
                 venta.totalVenta = decimal.Parse(txtTotalVenta.Text);
-                venta.fecha = DateTime.Today;
+                venta.fecha = Convert.ToDateTime(dateFecha.Text);
                 db.tb_venta.Add(venta);
                 db.SaveChanges();
-                dgvVenta.Rows.Clear();
+              
             }
         }
         void guardardetalle()

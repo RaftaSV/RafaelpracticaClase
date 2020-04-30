@@ -66,13 +66,14 @@
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUsuarioNombre = new System.Windows.Forms.TextBox();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumeroVentas
             // 
             this.lblNumeroVentas.AutoSize = true;
-            this.lblNumeroVentas.Location = new System.Drawing.Point(138, 7);
+            this.lblNumeroVentas.Location = new System.Drawing.Point(98, 6);
             this.lblNumeroVentas.Name = "lblNumeroVentas";
             this.lblNumeroVentas.Size = new System.Drawing.Size(118, 16);
             this.lblNumeroVentas.TabIndex = 0;
@@ -81,7 +82,7 @@
             // lblNumeroR
             // 
             this.lblNumeroR.AutoSize = true;
-            this.lblNumeroR.Location = new System.Drawing.Point(262, 7);
+            this.lblNumeroR.Location = new System.Drawing.Point(222, 6);
             this.lblNumeroR.Name = "lblNumeroR";
             this.lblNumeroR.Size = new System.Drawing.Size(15, 16);
             this.lblNumeroR.TabIndex = 1;
@@ -91,7 +92,7 @@
             // 
             this.lblTipoDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTipoDoc.AutoSize = true;
-            this.lblTipoDoc.Location = new System.Drawing.Point(612, 46);
+            this.lblTipoDoc.Location = new System.Drawing.Point(677, 39);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(125, 16);
             this.lblTipoDoc.TabIndex = 2;
@@ -101,7 +102,7 @@
             // 
             this.lblCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(682, 12);
+            this.lblCliente.Location = new System.Drawing.Point(747, 5);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(49, 16);
             this.lblCliente.TabIndex = 3;
@@ -134,9 +135,9 @@
             this.cmbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbCliente.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(755, 4);
+            this.cmbCliente.Location = new System.Drawing.Point(820, -3);
             this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(149, 24);
+            this.cmbCliente.Size = new System.Drawing.Size(115, 24);
             this.cmbCliente.TabIndex = 0;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
@@ -148,9 +149,9 @@
             this.cmbDoc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbDoc.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbDoc.FormattingEnabled = true;
-            this.cmbDoc.Location = new System.Drawing.Point(755, 43);
+            this.cmbDoc.Location = new System.Drawing.Point(820, 36);
             this.cmbDoc.Name = "cmbDoc";
-            this.cmbDoc.Size = new System.Drawing.Size(149, 24);
+            this.cmbDoc.Size = new System.Drawing.Size(115, 24);
             this.cmbDoc.TabIndex = 0;
             this.cmbDoc.SelectedIndexChanged += new System.EventHandler(this.cmbDoc_SelectedIndexChanged);
             // 
@@ -378,6 +379,7 @@
             // txtMensaje
             // 
             this.txtMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtMensaje.Enabled = false;
             this.txtMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensaje.Location = new System.Drawing.Point(67, 436);
             this.txtMensaje.Multiline = true;
@@ -390,7 +392,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(349, 2);
+            this.lblUsuario.Location = new System.Drawing.Point(286, 2);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(76, 20);
             this.lblUsuario.TabIndex = 29;
@@ -402,9 +404,9 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(576, 3);
+            this.txtUsuario.Location = new System.Drawing.Point(513, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 19);
+            this.txtUsuario.Size = new System.Drawing.Size(79, 19);
             this.txtUsuario.TabIndex = 30;
             // 
             // txtTotalVenta
@@ -425,7 +427,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(537, 2);
+            this.label6.Location = new System.Drawing.Point(474, 1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 20);
             this.label6.TabIndex = 32;
@@ -437,10 +439,19 @@
             this.txtUsuarioNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuarioNombre.Enabled = false;
             this.txtUsuarioNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioNombre.Location = new System.Drawing.Point(431, 3);
+            this.txtUsuarioNombre.Location = new System.Drawing.Point(368, 2);
             this.txtUsuarioNombre.Name = "txtUsuarioNombre";
             this.txtUsuarioNombre.Size = new System.Drawing.Size(100, 19);
             this.txtUsuarioNombre.TabIndex = 33;
+            // 
+            // dateFecha
+            // 
+            this.dateFecha.CustomFormat = "yyyy- MM -dd";
+            this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateFecha.Location = new System.Drawing.Point(735, 66);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(200, 22);
+            this.dateFecha.TabIndex = 34;
             // 
             // frmVentas
             // 
@@ -449,6 +460,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(964, 546);
+            this.Controls.Add(this.dateFecha);
             this.Controls.Add(this.txtUsuarioNombre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTotalVenta);
@@ -530,5 +542,6 @@
         public System.Windows.Forms.TextBox txtTotalVenta;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtUsuarioNombre;
+        private System.Windows.Forms.DateTimePicker dateFecha;
     }
 }

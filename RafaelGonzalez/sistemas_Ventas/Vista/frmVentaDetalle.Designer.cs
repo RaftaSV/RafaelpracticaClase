@@ -32,14 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.btnRecargar = new System.Windows.Forms.Button();
-            this.txtmensaje = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,25 +87,6 @@
             this.dgvVenta.TabIndex = 18;
             this.dgvVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvVenta_KeyDown);
             // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Location = new System.Drawing.Point(375, 35);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(86, 37);
-            this.btnRecargar.TabIndex = 19;
-            this.btnRecargar.Text = "Recargar";
-            this.btnRecargar.UseVisualStyleBackColor = true;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // txtmensaje
-            // 
-            this.txtmensaje.Enabled = false;
-            this.txtmensaje.Location = new System.Drawing.Point(12, 40);
-            this.txtmensaje.Multiline = true;
-            this.txtmensaje.Name = "txtmensaje";
-            this.txtmensaje.Size = new System.Drawing.Size(283, 96);
-            this.txtmensaje.TabIndex = 20;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -143,14 +123,23 @@
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(127, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(716, 29);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Ventas realizadas, de enter sobre ellas para ver sus detalles";
+            // 
             // frmVentaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(948, 497);
-            this.Controls.Add(this.txtmensaje);
-            this.Controls.Add(this.btnRecargar);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvVenta);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -166,13 +155,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvVenta;
-        private System.Windows.Forms.Button btnRecargar;
-        private System.Windows.Forms.TextBox txtmensaje;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.Label label1;
     }
 }
