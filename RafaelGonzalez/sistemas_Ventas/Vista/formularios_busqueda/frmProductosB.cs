@@ -16,12 +16,13 @@ namespace sistemas_Ventas.Vista.formularios_busqueda
         public frmProductosB()
         {
             InitializeComponent();
-        
+            txtBuscar.Focus();
         }
 
         private void frmProductosB_Load(object sender, EventArgs e)
         {
            filtro();
+            
         }
         public void filtro()
         {
@@ -77,6 +78,10 @@ namespace sistemas_Ventas.Vista.formularios_busqueda
             if (e.KeyCode == Keys.Enter)
             {
                 envio();
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }

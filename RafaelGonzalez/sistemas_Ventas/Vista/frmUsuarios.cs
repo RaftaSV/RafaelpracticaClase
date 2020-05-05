@@ -135,7 +135,12 @@ namespace sistemas_Ventas.Vista
             txtContraseña.Text = Contra;
             txtEmail.Text = Email;
             activarBotones();
+            txtEmail.Enabled = true;
+            txtContraseña.Enabled = true;
+           
         }
+
+
         void DesactivarbotonesEditarEliminar()
         {
             btnEditar.Enabled = false;
@@ -155,6 +160,7 @@ namespace sistemas_Ventas.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             btnGuardar.Enabled = true;
+            Limpiartext(); 
             DesactivarbotonesEditarEliminar();
             activarTex();
             

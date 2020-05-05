@@ -101,7 +101,7 @@ namespace sistemas_Ventas.Vista
 
         private void frmVentas_Load(object sender, EventArgs e)
         {
-            
+            this.txtBuscar.Focus();
             cargarcombo();
             
             cargarNUmeroVenta();
@@ -249,6 +249,63 @@ namespace sistemas_Ventas.Vista
         
         }
 
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                if(e.KeyCode == Keys.Enter)
+                {
+                    btnBuscar.PerformClick();
+                }
+
+            }else if (e.KeyCode == Keys.Enter)
+            {
+                using(sistema_ventasEntities4 db = new sistema_ventasEntities4())
+                {
+                    try {
+                        producto pr = new producto();
+                        string b = txtBuscar.Text;
+                        int Buscar = int.Parse(b);
+                        pr = db.producto.Where(idBuscar => idBuscar.idProducto == Buscar).First();
+                        txtID.Text = pr.idProducto.ToString();
+                        txtProducto.Text = pr.nombreProducto.ToString();
+                        txtPrecio.Text = pr.precioProducto.ToString();
+                        txtCantidad.Focus();
+                        intentos += 1;
+                    }
+                    catch { }
+                    
+                }
+            }
+        }
+
+
+        int intentos = 1; 
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (intentos == 2)
+                {
+                    try
+                    {
+                        total = double.Parse(txtPrecio.Text) * double.Parse(txtCantidad.Text);
+                        txtTotal.Text = total.ToString();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    btnAgregar.PerformClick();
+                    txtBuscar.Focus();
+                    intentos = 0;
+                    txtCantidad.Text = "1";
+                }
+                intentos += 1;
+            }
+            
+        }
     }
     
 }
