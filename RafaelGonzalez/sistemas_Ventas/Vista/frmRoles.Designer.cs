@@ -92,6 +92,7 @@
             this.lblContraseña.Size = new System.Drawing.Size(77, 13);
             this.lblContraseña.TabIndex = 14;
             this.lblContraseña.Text = "Rol del usuario";
+            this.lblContraseña.Click += new System.EventHandler(this.lblContraseña_Click);
             // 
             // lblEmail
             // 
@@ -104,6 +105,7 @@
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "Email";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtRolUsuario
             // 

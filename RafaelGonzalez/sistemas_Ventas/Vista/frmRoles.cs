@@ -189,5 +189,15 @@ namespace sistemas_Ventas.Vista
         {
 
         }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContraseña_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
