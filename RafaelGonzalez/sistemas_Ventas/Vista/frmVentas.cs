@@ -18,7 +18,9 @@ namespace sistemas_Ventas.Vista
         string idDoc = "";
         string IdCliente = "";
         int IDVenta;
-      
+        double total = 0;
+        
+
         public frmVentas()
         {
             InitializeComponent();
@@ -81,21 +83,11 @@ namespace sistemas_Ventas.Vista
             txtCantidad.Focus();
 
         }
-        double total;
-        double totalV;
+       
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                total = double.Parse(txtPrecio.Text) * double.Parse(txtCantidad.Text);
-                txtTotal.Text = total.ToString();
-
-            }
-            catch (Exception ex)
-            {
-
-            }
+          
            
         }
 
@@ -145,19 +137,41 @@ namespace sistemas_Ventas.Vista
             }
         }
 
-      
+      void calculo()
+        {
+            double total = 0;
+            double totalv = 0;
+            foreach (DataGridViewRow i in dgvVenta.Rows)
+            {
+             
+                total = double.Parse(i.Cells[4].Value.ToString());
+                totalv += total;
+                txtTotalVenta.Text = totalv.ToString();
+            }
+            btnBuscar.Focus();
+            //dgvVenta.Refresh();
+            dgvVenta.ClearSelection();
+            if (dgvVenta.Rows.Count > 0) {
+                int ultimafila = dgvVenta.Rows.Count - 1;
+                dgvVenta.FirstDisplayedScrollingRowIndex = ultimafila;
+                dgvVenta.Rows[ultimafila].Selected = true;
+            }
+        }
 
         private void txtAgregar_Click_1(object sender, EventArgs e)
         {
-            if (txtCantidad.Text != "" && txtCantidad.Text != "0" && txtID.Text!="")
+            
+            if (txtCantidad.Text != "" && txtCantidad.Text != "0" && txtID.Text != "")
             {
                 dgvVenta.Rows.Add(txtID.Text, txtProducto.Text, txtPrecio.Text, txtCantidad.Text, total.ToString());
 
-                totalV = double.Parse(txtTotalVenta.Text) + total;
-                txtTotalVenta.Text = totalV.ToString();
+                calculo();
                 limpiar();
-                btnBuscar.Focus();
+               
             }
+            
+
+           
         }
         void limpiar()
         {
@@ -173,20 +187,26 @@ namespace sistemas_Ventas.Vista
         tb_venta venta = new tb_venta();
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            double efectivo = double.Parse(txtEfectivo.Text);
-            double total = double.Parse(txtTotalVenta.Text);
-            if (dgvVenta.RowCount > 0 && efectivo>=total )
+            
+            if (dgvVenta.RowCount > 0  )
             {
-                guardarventa();
-                guardardetalle();
+                double efectivo = double.Parse(txtEfectivo.Text);
+                double total = double.Parse(txtTotalVenta.Text);
+                if( efectivo >= total) 
+                {
+                    guardarventa();
+                    guardardetalle();
 
 
-                limpiar();
-                cargarcombo();
-                cargarNUmeroVenta();
-                txtTotalVenta.Text = "0";
-                txtEfectivo.Text = "";
-                dgvVenta.Rows.Clear();
+                    limpiar();
+                    cargarcombo();
+                    cargarNUmeroVenta();
+                    txtTotalVenta.Text = "0";
+                    txtEfectivo.Text = "";
+                    dgvVenta.Rows.Clear();
+                }
+                
+               
             }
         }
         void guardarventa() {
@@ -305,6 +325,27 @@ namespace sistemas_Ventas.Vista
                 intentos += 1;
             }
             
+        }
+
+        private void dgvVenta_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            calculo();
+            if (dgvVenta.Rows.Count == 0)
+            {
+                txtTotalVenta.Text = "0";
+            }
+            
+
+        }
+
+        private void dgvVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvVenta.Rows.Remove(dgvVenta.CurrentRow);
         }
     }
     
